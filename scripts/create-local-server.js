@@ -35,7 +35,7 @@ app
     return server.listen(PORT, (err) => {
       if (err) throw err;
 
-      console.log('> Ready on https://my-cool-domain:3000')
+      console.log('> Ready on https://my-cool-domain.local:3000')
     });
   })
   .catch((err) => {
