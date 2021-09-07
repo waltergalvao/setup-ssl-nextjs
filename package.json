@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "NODE_EXTRA_CA_CERTS=\"$(cat ./certs/.capath)\" node scripts/create-local-server.js",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "ssl:setup": "node scripts/create-ssl-certs.js"
   },
   "dependencies": {
     "next": "11.1.2",
@@ -14,6 +15,8 @@
     "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "chalk": "^4.1.2",
+    "devcert": "^1.2.0",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2"
   }
